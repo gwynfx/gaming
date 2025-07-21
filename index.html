@@ -22,15 +22,21 @@
       <div class="card animated">🎨 Avatars</div>
     </main>
     <footer>
-      <p>Made with ❤️ for gamers & friends</p>
+      <p>Made with excrutiating pain for gamers & friends</p>
     </footer>
   </div>
   <script>
+    // Theme toggle functionality
     const toggleBtn = document.getElementById('toggleTheme');
-    toggleBtn.onclick = () => {
-      document.body.classList.toggle('dark');
+    function updateIcon() {
       toggleBtn.textContent = document.body.classList.contains('dark') ? '🌞' : '🌜';
-    };
+    }
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      updateIcon();
+    });
+    // Set initial icon on page load
+    updateIcon();
   </script>
 </body>
 </html>
