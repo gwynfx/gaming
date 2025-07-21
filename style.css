@@ -1,12 +1,22 @@
 :root {
-  --bg1: #1e1e2f;
-  --bg2: #34344e;
-  --accent: #f50057;
-  --text: #fff;
-  --card-bg: rgba(255, 255, 255, 0.05);
+  --bg1: #0d1117;
+  --bg2: #161b22;
+  --text: #e6edf3;
+  --accent: #58a6ff;
+  --card-bg: rgba(255, 255, 255, 0.03);
   --transition: 0.3s ease;
 }
 
+/* Light theme (blue/black alternative) */
+body.light {
+  --bg1: #e7f0fa;
+  --bg2: #cbdaf1;
+  --text: #0d1117;
+  --accent: #1e90ff;
+  --card-bg: rgba(0, 0, 0, 0.05);
+}
+
+/* Base layout styles (unchanged) */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -23,6 +33,27 @@ body {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  background: var(--card-bg);
+  border: 1px solid var(--accent);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+#theme-toggle:hover {
+  background: var(--accent);
+  color: #fff;
 }
 
 nav {
