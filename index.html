@@ -2,41 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Humanized Gaming Hub</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gamer's Hub</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="theme-switcher">
-    <button id="toggleTheme" aria-label="Toggle theme">🌜</button>
+  <div class="theme-toggle">
+    <input type="checkbox" id="toggle-theme" />
+    <label for="toggle-theme">🌓</label>
   </div>
-  <div class="container">
-    <header>
-      <h1 class="glow">Welcome, Player!</h1>
-      <p class="subtitle">Explore, connect, and play—powered by you.</p>
-    </header>
-    <main class="grid">
-      <div class="card animated">🤝 Community</div>
-      <div class="card animated">🕹️ Play Now</div>
-      <div class="card animated">🎤 Voice Chat</div>
-      <div class="card animated">🎨 Avatars</div>
-    </main>
-    <footer>
-      <p>Made with excrutiating pain for gamers & friends</p>
-    </footer>
-  </div>
-  <script>
-    // Theme toggle functionality
-    const toggleBtn = document.getElementById('toggleTheme');
-    function updateIcon() {
-      toggleBtn.textContent = document.body.classList.contains('dark') ? '🌞' : '🌜';
-    }
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      updateIcon();
-    });
-    // Set initial icon on page load
-    updateIcon();
-  </script>
+
+  <header>
+    <h1>🎮 Gamer's Hub</h1>
+    <p>Your daily dose of digital adrenaline.</p>
+  </header>
+
+  <main class="grid">
+    <section class="card">
+      <h2>🔥 Trending</h2>
+      <p>Catch the latest in FPS, RPG, and battle royale madness!</p>
+    </section>
+    <section class="card">
+      <h2>🎯 Pro Tips</h2>
+      <p>Level up your skills with guides from top players.</p>
+    </section>
+    <section class="card">
+      <h2>🛠 Dev Corner</h2>
+      <p>Learn what’s cooking in game dev and modding.</p>
+    </section>
+    <section class="card">
+      <h2>💬 Community</h2>
+      <p>Join forums, events, and find your squad.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Gamer's Hub. Stay awesome. 🎧</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
