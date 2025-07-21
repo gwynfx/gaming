@@ -2,34 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home | GridWorld</title>
-  <link rel="stylesheet" href="styles.css" />
-<script defer src="script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Study Grooves</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<input type="checkbox" id="theme-toggle" />
-<label class="theme-switch" for="theme-toggle" title="Toggle Theme"></label>
-<button id="theme-toggle" title="Toggle Theme">🌓</button>
   <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="about.html">About</a>
+    <h1>🎧 Study Grooves</h1>
+    <div>
+      <a href="#home" onclick="showPage('home')">Home</a>
+      <a href="#about" onclick="showPage('about')">Why Music?</a>
+    </div>
   </nav>
 
-  <header>
-    <h1>🌐 Welcome to GridWorld</h1>
-    <p>This is a hand-crafted, animated, humanized website built entirely in HTML + CSS.</p>
-  </header>
+  <!-- Music Player -->
+  <div class="player">
+    <audio id="lofi-player" src="lo-fi.mp3" loop></audio>
+    <button id="play-btn">▶️</button>
+    <input id="vol-control" type="range" min="0" max="1" step="0.01" value="0.5">
+  </div>
 
-  <main class="grid">
-    <section class="card"><h2>🧱 Containers</h2><p>Each block here is styled with a soft glow and grid logic.</p></section>
-    <section class="card"><h2>✨ Animations</h2><p>Subtle transitions and hover effects guide the user naturally.</p></section>
-    <section class="card"><h2>🌈 Gradient Background</h2><p>The background animates to reflect liveliness.</p></section>
-    <section class="card"><h2>🤝 Human-Centered</h2><p>Text and layout that feel warm and crafted, not robotic.</p></section>
-  </main>
+  <div class="container" id="home">
+    <h2>Welcome to Your Focus Zone 🎶</h2>
+    <p>Ever stared at your notes and felt your brain buffering? Us too. That’s why we built a cozy space where studying meets vibing.</p>
+    <div class="grid">
+      <div class="card"><h3>🎵 Lo‑Fi Love</h3><p>Low‑key beats keep your mind calm and clear.</p></div>
+      <div class="card"><h3>🎸 Instrumental Bliss</h3><p>Gentle instruments help you focus without distraction.</p></div>
+      <div class="card"><h3>🔊 Focus Boosters</h3><p>Playlists curated to keep you in the zone.</p></div>
+    </div>
+    <button onclick="showPage('about')">But how does it help?</button>
+  </div>
+
+  <div class="container" id="about" style="display:none">
+    <h2>How Music Helps You Study 🎧📚</h2>
+    <ul>
+      <li><strong>Calms Anxiety:</strong> Creates a comfortable mental space.</li>
+      <li><strong>Boosts Mood:</strong> A positive mind = better focus.</li>
+      <li><strong>Improves Memory:</strong> Activates brain zones tied to recall.</li>
+      <li><strong>Creates Routine:</strong> Your brain knows “study time”.</li>
+    </ul>
+    <button onclick="showPage('home')">Back to Home</button>
+  </div>
 
   <footer>
-    <p>&copy; 2025 GridWorld — Created with 💚 and CSS</p>
+    <p>Made with ☕ + 🎶 by someone who hits play before opening books.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
