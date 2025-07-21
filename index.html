@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Humanized Gaming Hub</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="theme-switcher">
+    <button id="toggleTheme" aria-label="Toggle theme">🌜</button>
+  </div>
+  <div class="container">
+    <header>
+      <h1 class="glow">Welcome, Player!</h1>
+      <p class="subtitle">Explore, connect, and play—powered by you.</p>
+    </header>
+    <main class="grid">
+      <div class="card animated">🤝 Community</div>
+      <div class="card animated">🕹️ Play Now</div>
+      <div class="card animated">🎤 Voice Chat</div>
+      <div class="card animated">🎨 Avatars</div>
+    </main>
+    <footer>
+      <p>Made with ❤️ for gamers & friends</p>
+    </footer>
+  </div>
+  <script>
+    const toggleBtn = document.getElementById('toggleTheme');
+    toggleBtn.onclick = () => {
+      document.body.classList.toggle('dark');
+      toggleBtn.textContent = document.body.classList.contains('dark') ? '🌞' : '🌜';
+    };
+  </script>
+</body>
+</html>
