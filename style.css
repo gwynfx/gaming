@@ -1,44 +1,78 @@
 :root {
-  --bg-gradient: linear-gradient(135deg, #1f1c2c, #928dab);
-  --text-color: #ffffff;
+  --bg1: #0f0c29;
+  --bg2: #302b63;
+  --bg3: #24243e;
+  --text: #fff;
   --card-bg: rgba(255, 255, 255, 0.05);
-  --card-border: rgba(255, 255, 255, 0.1);
-  --transition-speed: 0.4s;
+  --border: rgba(255, 255, 255, 0.1);
+  --neon: #00ffff;
+  --transition: 0.4s ease;
 }
 
 body.light {
-  --bg-gradient: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-  --text-color: #222222;
+  --bg1: #fefcea;
+  --bg2: #f1daff;
+  --bg3: #d9e7ff;
+  --text: #111;
   --card-bg: rgba(255, 255, 255, 0.8);
-  --card-border: rgba(0, 0, 0, 0.1);
+  --border: rgba(0, 0, 0, 0.1);
+  --neon: #ff00cc;
+}
+
+/* Cursor */
+body {
+  cursor: url('crosshair.svg') 12 12, auto;
 }
 
 * {
   box-sizing: border-box;
-  transition: background-color var(--transition-speed),
-              color var(--transition-speed),
-              border-color var(--transition-speed);
+  margin: 0;
+  padding: 0;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+  scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: var(--bg-gradient);
-  color: var(--text-color);
+  color: var(--text);
+  background: linear-gradient(-45deg, var(--bg1), var(--bg2), var(--bg3));
+  background-size: 400% 400%;
+  animation: bgMove 20s ease infinite;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Fade + Slide */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 header {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
+  text-shadow: 0 0 10px var(--neon);
+  animation: fadeSlideUp 1s ease-out;
 }
 
 .theme-toggle {
   position: absolute;
   top: 1rem;
   right: 1rem;
+  z-index: 100;
 }
 
 .theme-toggle input {
@@ -46,40 +80,77 @@ header {
 }
 
 .theme-toggle label {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background: var(--card-bg);
+  border-radius: 30px;
+  position: relative;
   cursor: pointer;
-  font-size: 1.5rem;
-  transition: transform var(--transition-speed);
+  border: 1px solid var(--border);
 }
 
-.theme-toggle label:hover {
-  transform: rotate(20deg);
+.slider {
+  content: "";
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  background-color: var(--neon);
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.4s ease;
+}
+
+input:checked + label .slider {
+  transform: translateX(30px);
 }
 
 .grid {
   display: grid;
-  gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
   padding: 2rem;
   flex: 1;
+  animation: fadeSlideUp 1.2s ease-out;
 }
 
 .card {
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  padding: 1.5rem;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
-  transition: transform var(--transition-speed);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cardFade 0.8s ease-out forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes cardFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 0 20px var(--neon);
+  filter: brightness(1.2);
 }
 
 footer {
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  animation: fadeSlideUp 1.5s ease-out;
 }
