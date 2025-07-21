@@ -96,4 +96,27 @@ header {
 }
 .card:hover {
   transform: translateY(-9px) scale(1.05) rotate(-0.7deg);
-  box
+  box-shadow: 0 7px 32px #7057fa66, 0 0 0 7px #efe3ff15;
+  background: linear-gradient(90deg, var(--card-bg) 65%, var(--accent) 100%);
+}
+@keyframes slidein {
+  from {
+    transform: translateY(38px) scale(0.95);
+    opacity: 0.71;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+footer {
+  margin-top: 2.5em;
+  text-align: center;
+  color: #8998e0;
+  font-size: 1.05em;
+}
+/* Responsive */
+@media (max-width: 660px) {
+  .container { padding: 1em 0.4em; }
+  .card { font-size: 1em; padding: 1.2em 0.5em; }
+}
