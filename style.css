@@ -1,52 +1,187 @@
-* { margin:0; padding:0; box-sizing:border-box; font-family:"Segoe UI",sans-serif; }
-body {
-  background:linear-gradient(135deg,#8EC5FC,#E0C3FC);
-  color:#333; animation:fadeIn 1.2s ease;
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
 }
-nav {
-  display:flex; justify-content:space-between; align-items:center;
-  padding:1rem 2rem; background:rgba(255,255,255,0.3);
-  backdrop-filter:blur(10px); border-bottom:1px solid rgba(0,0,0,0.1);
-  animation:slideDown 1s ease;
-}
-nav h1 { font-size:1.8rem; }
-nav a {
-  margin-left:1rem; font-weight:bold; color:#333; text-decoration:none;
-  transition:color .3s;
-}
-nav a:hover { color:#6C63FF; }
-.player {
-  position:fixed; bottom:1rem; left:50%; transform:translateX(-50%);
-  background:rgba(255,255,255,0.5); padding:0.5rem 1rem;
-  border-radius:20px; box-shadow:0 8px 16px rgba(0,0,0,0.1);
-  backdrop-filter:blur(10px); display:flex; align-items:center;
-  animation:fadeUp 1s ease;
-}
-#play-btn {
-  background:none; border:none; font-size:1.5rem; cursor:pointer;
-}
-#vol-control { margin-left:1rem; }
-.container {
-  max-width:1200px; margin:6rem auto 4rem; padding:2rem;
-  background:rgba(255,255,255,0.6); border-radius:20px;
-  box-shadow:0 8px 16px rgba(0,0,0,0.1); animation:fadeUp 1s ease;
-}
-.grid {
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:2rem; margin:2rem 0;
-}
-.card {
-  background:#fff; border-radius:16px; padding:1.5rem;
-  transition:transform .3s,box-shadow .3s; animation:popIn .8s ease;
-}
-.card:hover {
-  transform:translateY(-5px); box-shadow:0 12px 20px rgba(0,0,0,0.1);
-}
-footer {
-  text-align:center; padding:1rem; color:#555;
-}
-@keyframes fadeIn {from{opacity:0}to{opacity:1}}
-@keyframes slideDown {from{transform:translateY(-100%);}to{transform:translateY(0);}}
-@keyframes fadeUp {from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
-@keyframes popIn {0%{opacity:0;transform:scale(0.8);}100%{opacity:1;transform:scale(1);}}
 
+/* Body Styles */
+body {
+  /* Gradient background */
+  background: linear-gradient(135deg, #8EC5FC, #E0C3FC);
+  color: #333;
+
+  /* Fade in animation on page load */
+  animation: fadeIn 1.2s ease;
+}
+
+/* Navigation Bar */
+nav {
+  /* Flexbox layout for navigation */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Spacing and background */
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.3);
+
+  /* Blurred background effect */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  /* Slide down animation on page load */
+  animation: slideDown 1s ease;
+}
+
+nav h1 {
+  /* Large font size for logo */
+  font-size: 1.8rem;
+}
+
+nav a {
+  /* Spacing and styling for links */
+  margin-left: 1rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+
+  /* Smooth color transition on hover */
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  /* Hover color */
+  color: #6C63FF;
+}
+
+/* Player Component */
+.player {
+  /* Fixed position at the bottom of the screen */
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* Background and styling */
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+  /* Blurred background effect */
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+
+  /* Fade up animation on page load */
+  animation: fadeUp 1s ease;
+}
+
+#play-btn {
+  /* Play button styles */
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#vol-control {
+  /* Volume control spacing */
+  margin-left: 1rem;
+}
+
+/* Main Content Container */
+.container {
+  /* Max width and centering */
+  max-width: 1200px;
+  margin: 6rem auto 4rem;
+  padding: 2rem;
+
+  /* Background and styling */
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+  /* Fade up animation on page load */
+  animation: fadeUp 1s ease;
+}
+
+/* Grid Layout */
+.grid {
+  /* Grid layout with flexible columns */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+/* Card Component */
+.card {
+  /* Background and styling */
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+
+  /* Smooth transition effects */
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  /* Pop in animation on page load */
+  animation: popIn 0.8s ease;
+}
+
+.card:hover {
+  /* Hover effects */
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+footer {
+  /* Centering and styling */
+  text-align: center;
+  padding: 1rem;
+  color: #555;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
