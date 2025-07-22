@@ -1,55 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Study Grooves</title>
-  <link rel="stylesheet" href="style.css">
+<!-- Study Grooves Home Page -->
 
-  <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz8pPdQ-FFCeUuEXejknT5bsnFeonFeEhQzw&s">
-</head>
-<body>
+<!-- Header Section -->
+<header>
+  <h1>Study Grooves 🎧</h1>
   <nav>
-    <h1>🎧 Study Grooves</h1>
-    <div>
-      <a href="#home" onclick="showPage('home')">Home</a>
-      <a href="#about" onclick="showPage('about')">Why Music?</a>
-    </div>
-  </nav>
-
-  <!-- Music Player -->
-  <div class="player">
-    <audio id="lofi-player" src="lo-fi.mp3" loop></audio>
-    <button id="play-btn">▶️</button>
-    <input id="vol-control" type="range" min="0" max="1" step="0.01" value="0.5">
-  </div>
-
-  <div class="container" id="home">
-    <h2>Welcome to Your Focus Zone 🎶</h2>
-    <p><i>Ever stared at your notes and felt your brain buffering? Us too. That’s why we built a cozy space where studying meets vibing.</i></p>
-    <div class="grid">
-      <div class="card"><h3>🎵 Lo‑Fi Love</h3><p>Low‑key beats keep your mind calm and clear.</p></div>
-      <div class="card"><h3>🎸 Instrumental Bliss</h3><p>Gentle instruments help you focus without distraction.</p></div>
-      <div class="card"><h3>🔊 Focus Boosters</h3><p>Playlists curated to keep you in the zone.</p></div>
-    </div>
-    <button onclick="showPage('about')">But how does it help?</button>
-  </div>
-
-  <div class="container" id="about" style="display:none">
-    <h2>How Music Helps You Study 🎧📚</h2>
     <ul>
-      <li><strong>Calms Anxiety:</strong> Creates a comfortable mental space.</li>
-      <li><strong>Boosts Mood:</strong> A positive mind = better focus.</li>
-      <li><strong>Improves Memory:</strong> Activates brain zones tied to recall.</li>
-      <li><strong>Creates Routine:</strong> Your brain knows “study time”.</li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Why Music?</a></li>
     </ul>
-    <button onclick="showPage('home')">Back to Home</button>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h2>Welcome to Your Focus Zone 🎶</h2>
+  <p>Ever stared at your notes and felt your brain buffering? Us too. That’s why we built a cozy space where studying meets vibing.</p>
+  <div class="features">
+    <div class="feature">
+      <h3>🎵 Lo‑Fi Love</h3>
+      <p>Low‑key beats keep your mind calm and clear.</p>
+    </div>
+    <div class="feature">
+      <h3>🎸 Instrumental Bliss</h3>
+      <p>Gentle instruments help you focus without distraction.</p>
+    </div>
+    <div class="feature">
+      <h3>🔊 Focus Boosters</h3>
+      <p>Playlists curated to keep you in the zone.</p>
+    </div>
   </div>
+</section>
 
-  <footer>
-    <p>@Music Hub, 2025</p>
-  </footer>
+<!-- How Music Helps Section -->
+<section>
+  <h2>How Music Helps You Study 🎧📚</h2>
+  <ul>
+    <li>Calms Anxiety: Creates a comfortable mental space.</li>
+    <li>Boosts Mood: A positive mind = better focus.</li>
+    <li>Improves Memory: Activates brain zones tied to recall.</li>
+    <li>Creates Routine: Your brain knows “study time”.</li>
+  </ul>
+</section>
 
-  <script src="script.js"></script>
-</body>
-</html>
+<!-- Footer Section -->
+<footer>
+  <p>&copy; @Music Hub, 2025</p>
+  <a href="#" class="back-to-home">Back to Home</a>
+</footer>
